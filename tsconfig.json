@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "target": "es2025",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "types": [
+      "node",
+      "@wdio/types",
+      "@wdio/globals/types",
+      "@wdio/mocha-framework",
+      "expect-webdriverio",
+    ],
+    "allowJs": true,
+    "rootDir": "./",
+    "removeComments": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./config/**/*.ts",
+    "./tests/**/*.ts"
+  ],
+   "exclude": ["node_modules"]
+}
