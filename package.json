@@ -2,30 +2,40 @@
   "name": "wdio-appium-video-qa-challenge",
   "version": "0.1.0",
   "author": "Maksym Zapisov <max.zapisov@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "description": "Example project to run WebdriverIO tests with Appium to test native applications for Android",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/makszapi/wdio-appium-video-qa-challenge.git"
   },
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
+    "test": "npm run android:app",
+    "test:report": "npm run android:app; npm run report:generate && npm run report:open",
+    "android:app": "wdio run config/wdio-android-videoapp.conf.ts",
+    "report:generate": "allure generate test_reports/allure-results --clean -o test_reports/allure-report",
+    "report:open": "allure open test_reports/allure-report",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
-    "android.app": "wdio run config/wdio.android.videoapp.conf.ts",
     "appium:inspector": "appium --use-plugins=inspector"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@stylistic/eslint-plugin": "5.10.0",
     "@types/node": "26.2.0",
+    "@wdio/allure-reporter": "9.30.1",
     "@wdio/appium-service": "9.30.1",
     "@wdio/cli": "9.30.1",
     "@wdio/globals": "9.29.1",
+    "@wdio/junit-reporter": "9.30.1",
     "@wdio/local-runner": "9.30.1",
     "@wdio/mocha-framework": "9.30.1",
     "@wdio/spec-reporter": "9.30.1",
+    "allure-commandline": "2.36.0",
     "appium": "3.6.0",
     "appium-inspector-plugin": "2026.7.1",
     "appium-uiautomator2-driver": "8.4.0",
