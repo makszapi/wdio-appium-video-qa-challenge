@@ -15,8 +15,6 @@ class AppHelper {
       await browser.execute('mobile: clearApp', {
         appId,
       });
-
-      await browser.activateApp(appId);
     }
     else {
       // TODO: Implement the resetApp method for iOS apps if needed. The current implementation only supports Android apps.

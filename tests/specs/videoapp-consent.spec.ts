@@ -5,6 +5,7 @@ import AppHelper from '../utils/app-helper.js';
 
 describe('Video app - accept, reject, and manage consent preferences', () => {
   beforeEach(async () => {
+    await browser.activateApp(AppHelper.getAppId());
     await ConsentScreen.waitUntilDisplayed();
   });
 
